@@ -1,0 +1,20 @@
+{
+  "name": "n703-api-clima",
+  "version": "1.0.0",
+  "description": "API REST de agregação de dados climáticos e geográficos de cidades brasileiras",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^1.16.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "nodemon": "^3.1.14"
+  }
+}
