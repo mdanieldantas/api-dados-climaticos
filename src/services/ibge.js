@@ -78,4 +78,27 @@ async function buscarCidade(nomeCidade) {
   }
 }
 
-module.exports = { buscarCidade };
+async function buscarCidadesPorUF(siglaUF) {
+  try {
+    const url =
+      "https://servicodados.ibge.gov.br/api/v1/localidades/estados/" +
+      encodeURIComponent(siglaUF) +
+      "/municipios";
+
+    const response = await axios.get(url);
+    const cidades = response.data;
+
+    if (!Array.isArray(cidades) || cidades.length === 0) {
+      return null;
+    }
+
+    return cidades.map((cidade) => ({ nome: cidade.nome }));
+  } catch (error) {
+    if (error.response && error.response.status === 404) {
+      return null;
+    }
+    throw { tipo: "SERVICO_EXTERNO", servico: "IBGE" };
+  }
+}
+
+module.exports = { buscarCidade, buscarCidadesPorUF };
