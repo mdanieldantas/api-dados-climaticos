@@ -100,3 +100,12 @@ Todas as rotas desconhecidas retornam JSON com `ROTA_NAO_ENCONTRADA`.
 - `tests/clima.test.js`
 - `tests/cidades.test.js`
 - `docs/postman_collection.json`
+
+## Front de teste
+
+Para testar as rotas no navegador, use a pasta `frontend/`:
+
+- `frontend/index.html`
+- `frontend/css/styles.css`
+- `frontend/js/api.js`
+- `frontend/js/app.js`
