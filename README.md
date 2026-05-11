@@ -52,6 +52,8 @@ Exemplo:
 
 `GET /api/v1/clima/Fortaleza`
 
+As coordenadas da cidade sao obtidas dinamicamente via geocoding da Open-Meteo, a partir do nome validado no IBGE.
+
 Erros tratados:
 - 400 `NOME_INVALIDO`
 - 404 `CIDADE_NAO_ENCONTRADA`
@@ -74,6 +76,10 @@ Erros tratados:
 - 400 `LIMITE_INVALIDO`
 - 404 `UF_NAO_ENCONTRADA`
 - 503 `SERVICO_EXTERNO_INDISPONIVEL`
+
+### Rota inexistente
+
+Todas as rotas desconhecidas retornam JSON com `ROTA_NAO_ENCONTRADA`.
 
 ## APIs externas
 
