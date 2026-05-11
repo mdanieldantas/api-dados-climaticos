@@ -35,6 +35,15 @@ app.get('/api/v1/health', async (req, res) => {
 app.use('/api/v1/clima', climaRoutes);
 app.use('/api/v1/cidades', cidadesRoutes);
 
+app.use((req, res) => {
+  return res.status(404).json({
+    erro: true,
+    codigo: 'ROTA_NAO_ENCONTRADA',
+    mensagem: 'Rota nao encontrada',
+    rota: req.originalUrl,
+  });
+});
+
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
