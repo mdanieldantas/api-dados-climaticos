@@ -46,4 +46,11 @@ describe("GET /api/v1/cidades/:sigla_uf", () => {
     expect(response.status).toBe(400);
     expect(response.body.codigo).toBe("SIGLA_UF_INVALIDA");
   });
+
+  test("retorna 404 em JSON para rota inexistente", async () => {
+    const response = await request(app).get("/api/v1/rota-inexistente");
+
+    expect(response.status).toBe(404);
+    expect(response.body.codigo).toBe("ROTA_NAO_ENCONTRADA");
+  });
 });
