@@ -49,6 +49,139 @@
       }
     },
     {
+      "name": "Clima - Sao Paulo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/clima/S%C3%A3o%20Paulo",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "clima",
+            "São Paulo"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Clima - Rio de Janeiro",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/clima/Rio%20de%20Janeiro",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "clima",
+            "Rio de Janeiro"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Clima - Brasilia",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/clima/Bras%C3%ADlia",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "clima",
+            "Brasília"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Clima - Salvador",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/clima/Salvador",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "clima",
+            "Salvador"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Clima - Belo Horizonte",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/clima/Belo%20Horizonte",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "clima",
+            "Belo Horizonte"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Clima - Curitiba",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/clima/Curitiba",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "clima",
+            "Curitiba"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Clima - Manaus",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/clima/Manaus",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "clima",
+            "Manaus"
+          ]
+        }
+      }
+    },
+    {
       "name": "Clima - Nome invalido",
       "request": {
         "method": "GET",
