@@ -19,5 +19,4 @@ desktop.ini
 # Cobertura de testes
 coverage/
 
-#docs
-docs/
+docs2/
