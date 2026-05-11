@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Dados Climaticos - Teste de Rotas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Teste de rotas</p>
+        <h1>API Dados Climaticos</h1>
+        <p class="subtitle">Interface simples em HTML, CSS e JavaScript puro para testar health, clima e cidades.</p>
+      </div>
+      <div class="status-card">
+        <span class="status-dot" id="connectionDot"></span>
+        <div>
+          <strong id="connectionLabel">Pronto para testar</strong>
+          <p id="connectionHint">Aponte para a API em localhost:3000 ou ajuste a URL abaixo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel controls">
+      <div class="control-group">
+        <label for="baseUrl">Base URL da API</label>
+        <input id="baseUrl" type="url" value="http://localhost:3000" placeholder="http://localhost:3000">
+      </div>
+
+      <div class="grid">
+        <div class="control-group">
+          <label for="cityInput">Cidade</label>
+          <input id="cityInput" type="text" value="Fortaleza" placeholder="Fortaleza">
+        </div>
+
+        <div class="control-group">
+          <label for="ufInput">UF</label>
+          <input id="ufInput" type="text" value="CE" maxlength="2" placeholder="CE">
+        </div>
+
+        <div class="control-group">
+          <label for="limitInput">Limite de cidades</label>
+          <input id="limitInput" type="number" value="10" min="1" max="100">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="primary" data-action="health">Health</button>
+        <button class="primary" data-action="clima">Clima da cidade</button>
+        <button class="primary" data-action="cidades">Cidades por UF</button>
+      </div>
+
+      <div class="chips" id="quickCities">
+        <button class="chip" data-city="Fortaleza" data-uf="CE">Fortaleza</button>
+        <button class="chip" data-city="Sao Paulo" data-uf="SP">Sao Paulo</button>
+        <button class="chip" data-city="Rio de Janeiro" data-uf="RJ">Rio de Janeiro</button>
+        <button class="chip" data-city="Brasilia" data-uf="DF">Brasilia</button>
+        <button class="chip" data-city="Salvador" data-uf="BA">Salvador</button>
+        <button class="chip" data-city="Belo Horizonte" data-uf="MG">Belo Horizonte</button>
+        <button class="chip" data-city="Curitiba" data-uf="PR">Curitiba</button>
+        <button class="chip" data-city="Manaus" data-uf="AM">Manaus</button>
+      </div>
+    </section>
+
+    <section class="panel output">
+      <div class="output-header">
+        <div>
+          <p class="eyebrow">Resposta da API</p>
+          <h2 id="requestTitle">Nenhuma requisição executada</h2>
+        </div>
+        <span class="badge" id="responseBadge">Aguardando</span>
+      </div>
+
+      <pre id="responseOutput" class="response-view">Clique em uma rota para ver a resposta aqui.</pre>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
