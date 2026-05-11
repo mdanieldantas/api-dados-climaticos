@@ -10,23 +10,42 @@ describe("GET /api/v1/clima/:nome_cidade", () => {
     jest.resetAllMocks();
   });
 
-  test("retorna 200 para cidade valida", async () => {
+  test.each([
+    ["Fortaleza", "CE"],
+    ["São Paulo", "SP"],
+    ["Rio de Janeiro", "RJ"],
+    ["Brasília", "DF"],
+    ["Salvador", "BA"],
+    ["Belo Horizonte", "MG"],
+    ["Curitiba", "PR"],
+    ["Manaus", "AM"],
+  ])("retorna 200 para cidade valida: %s", async (nomeCidade, siglaUF) => {
     axios.get
       .mockResolvedValueOnce({
         data: [
           {
-            id: 2304400,
-            nome: "Fortaleza",
+            id: 1,
+            nome: nomeCidade,
             microrregiao: {
               mesorregiao: {
                 UF: {
-                  sigla: "CE",
-                  regiao: { latitude: -3.73, longitude: -38.52 },
+                  sigla: siglaUF,
+                  regiao: {},
                 },
               },
             },
           },
         ],
+      })
+      .mockResolvedValueOnce({
+        data: {
+          results: [
+            {
+              latitude: -10,
+              longitude: -20,
+            },
+          ],
+        },
       })
       .mockResolvedValueOnce({
         data: {
@@ -38,11 +57,11 @@ describe("GET /api/v1/clima/:nome_cidade", () => {
         },
       });
 
-    const response = await request(app).get("/api/v1/clima/Fortaleza");
+    const response = await request(app).get(`/api/v1/clima/${encodeURIComponent(nomeCidade)}`);
 
     expect(response.status).toBe(200);
-    expect(response.body.nome).toBe("Fortaleza");
-    expect(response.body.estado).toBe("CE");
+    expect(response.body.nome).toBe(nomeCidade);
+    expect(response.body.estado).toBe(siglaUF);
     expect(response.body.clima).toHaveProperty("temperatura_min");
     expect(response.body.clima).toHaveProperty("temperatura_max");
     expect(response.body.clima).toHaveProperty("condicao");
